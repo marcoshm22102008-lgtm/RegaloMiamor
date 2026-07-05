@@ -1,0 +1,475 @@
+/* ==========================================================================
+   SISTEMA DE DISEÑO - "7 DÍAS CONTIGO"
+   ========================================================================== */
+
+:root {
+    /* Paleta de Colores */
+    --bg-primary: #fff2f5;       /* Rosa blanquecino ultra suave */
+    --bg-secondary: #ffffff;
+    --primary-color: #ff4b6b;    /* Rosa coral/rojo romántico principal */
+    --primary-hover: #e03b57;
+    --accent-red: #ff2a55;       /* Rojo de acento */
+    --text-main: #2b2526;        /* Negro suave, menos agresivo que #000 */
+    --text-muted: #857476;       /* Gris con matiz rosa */
+    
+    /* Efecto Glassmorphism */
+    --glass-bg: rgba(255, 255, 255, 0.45);
+    --glass-border: rgba(255, 255, 255, 0.6);
+    --glass-shadow: 0 8px 32px rgba(255, 75, 107, 0.08);
+    
+    /* Tipografía */
+    --font-title: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    
+    /* Transiciones */
+    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Reset de Estilos */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent; /* Elimina flash azul al pulsar en iOS */
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    min-height: 100vh;
+    min-height: -webkit-fill-available; /* Ajuste para viewport en Safari de iOS */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* ==========================================================================
+   EFECTOS DE FONDO AMBIENTE (GLOWS)
+   ========================================================================== */
+
+.bg-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.6;
+    animation: floatGlow 12s infinite alternate ease-in-out;
+}
+
+.bg-glow-1 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255,75,107,0.25) 0%, rgba(255,255,255,0) 70%);
+    top: -50px;
+    left: -50px;
+}
+
+.bg-glow-2 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(255,42,85,0.18) 0%, rgba(255,255,255,0) 70%);
+    bottom: -50px;
+    right: -50px;
+    animation-delay: -6s;
+}
+
+@keyframes floatGlow {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(30px, 20px) scale(1.15); }
+}
+
+/* ==========================================================================
+   CONTENEDOR DE LA APLICACIÓN (MÓVIL MOCKUP EN ESCRITORIO)
+   ========================================================================== */
+
+.app-container {
+    width: 100%;
+    max-width: 430px; /* Ancho estándar de un iPhone Max */
+    height: 100vh;
+    height: -webkit-fill-available;
+    max-height: 880px; /* Altura ideal estética */
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border-radius: 40px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 24px 64px rgba(255, 75, 107, 0.12);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-smooth);
+}
+
+/* Responsive para pantallas móviles */
+@media (max-width: 480px) {
+    .app-container {
+        max-width: 100%;
+        height: 100vh;
+        max-height: 100%;
+        border-radius: 0;
+        border: none;
+    }
+}
+
+/* ==========================================================================
+   VISTAS (SISTEMA DE NAVEGACIÓN SPA)
+   ========================================================================== */
+
+.view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    overflow-y: auto;
+    /* Ajuste de scrollbar invisible en iOS */
+    -webkit-overflow-scrolling: touch;
+    
+    /* Configuración por defecto de vista inactiva (desplazada a la derecha) */
+    opacity: 0;
+    transform: translateX(100%);
+    pointer-events: none;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+    z-index: 1;
+}
+
+/* Vista activa */
+.view.active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+    z-index: 2;
+}
+
+/* Vista saliendo hacia la izquierda (efecto profundidad iOS) */
+.view.slide-out {
+    opacity: 0;
+    transform: translateX(-25%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* ==========================================================================
+   DISEÑO VISTA PRINCIPAL (MENÚ)
+   ========================================================================== */
+
+.app-header {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.header-heart-badge {
+    width: 54px;
+    height: 54px;
+    background: white;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+    box-shadow: 0 8px 20px rgba(255, 75, 107, 0.15);
+    border: 1px solid rgba(255, 75, 107, 0.1);
+}
+
+.pulse-heart {
+    width: 26px;
+    height: 26px;
+    fill: var(--primary-color);
+    animation: heartBeat 2s infinite ease-in-out;
+}
+
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.15); }
+    30% { transform: scale(1.05); }
+    45% { transform: scale(1.2); }
+}
+
+.app-title {
+    font-family: var(--font-title);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+}
+
+.app-subtitle {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Cuadrícula de Tarjetas */
+.days-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    flex-grow: 1;
+    margin-bottom: 24px;
+}
+
+/* Tarjeta de Día */
+.day-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    box-shadow: var(--glass-shadow);
+    transition: var(--transition-bounce);
+    aspect-ratio: 1 / 1;
+    outline: none;
+}
+
+.day-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 12px 36px rgba(255, 75, 107, 0.15);
+}
+
+.day-card:active {
+    transform: scale(0.95);
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* Tarjeta Especial (Día 7) */
+.day-card-featured {
+    grid-column: span 2;
+    aspect-ratio: auto;
+    height: 110px;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 32px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.6) 0%, rgba(255,242,245,0.7) 100%);
+    border: 1px solid rgba(255, 75, 107, 0.2);
+}
+
+.day-card-featured .featured-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.day-card-featured .day-number {
+    font-size: 38px;
+    line-height: 1;
+    margin-bottom: 2px;
+}
+
+/* Elementos Internos de la Tarjeta */
+.day-number {
+    font-family: var(--font-title);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 2px;
+    transition: var(--transition-smooth);
+}
+
+.day-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+}
+
+/* Indicador de Candado */
+.lock-indicator {
+    margin-top: 10px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 75, 107, 0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition-smooth);
+}
+
+.icon-lock {
+    width: 14px;
+    height: 14px;
+    fill: var(--primary-color);
+    transition: var(--transition-smooth);
+}
+
+/* Estado de la tarjeta cuando está "desbloqueada/abierta" */
+.day-card.unlocked .lock-indicator {
+    background: rgba(255, 42, 85, 0.15);
+}
+
+.day-card.unlocked .icon-lock {
+    fill: var(--accent-red);
+    transform: scale(1.1);
+}
+
+/* Footer de Menú */
+.main-footer {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 11px;
+    color: var(--text-muted);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+   DISEÑO VISTAS DE DÍAS INDIVIDUALES
+   ========================================================================== */
+
+.day-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 48px;
+    margin-bottom: 24px;
+}
+
+.btn-back {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: var(--primary-color);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+    padding: 8px 12px 8px 4px;
+    border-radius: 12px;
+}
+
+.btn-back:active {
+    background: rgba(255, 75, 107, 0.08);
+    transform: translateX(-2px);
+}
+
+.icon-chevron {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.day-header-number {
+    font-family: var(--font-title);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-main);
+    padding-right: 12px;
+}
+
+/* Contenido del Día */
+.day-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.glass-card {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    border-radius: 30px;
+    padding: 40px 24px;
+    box-shadow: var(--glass-shadow);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.decorative-heart {
+    font-size: 44px;
+    margin-bottom: 16px;
+    display: inline-block;
+    filter: drop-shadow(0 4px 10px rgba(255, 75, 107, 0.2));
+    animation: floatHeart 4s infinite ease-in-out;
+}
+
+.animate-spin-slow {
+    animation: pulseHeartSpin 6s infinite ease-in-out;
+}
+
+@keyframes floatHeart {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+@keyframes pulseHeartSpin {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.15) rotate(10deg); }
+}
+
+.day-content-title {
+    font-family: var(--font-title);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 16px;
+}
+
+.placeholder-text {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    border: 1px dashed rgba(255, 75, 107, 0.2);
+    padding: 16px 24px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.3);
+    display: inline-block;
+}
+
+/* ==========================================================================
+   EFECTO INTERACTIVO: PARTÍCULAS DE CORAZÓN
+   ========================================================================== */
+
+.heart-particle {
+    position: absolute;
+    pointer-events: none;
+    font-size: 18px;
+    z-index: 100;
+    animation: riseAndFade 1.2s forwards cubic-bezier(0.1, 0.8, 0.3, 1);
+}
+
+@keyframes riseAndFade {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(1.5);
+    }
+}
