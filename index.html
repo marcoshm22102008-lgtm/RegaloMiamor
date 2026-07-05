@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Un rincón especial de 7 días contigo para mi hermosa Valeria. Un viaje lleno de amor, recuerdos y detalles mágicos.">
+    <title>7 Días Contigo - Para Valeria ❤️</title>
+    
+    <!-- Google Fonts: Montserrat para texto limpio, Playfair Display para títulos elegantes, Dancing Script para toque manuscrito romántico -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="amor.css">
+</head>
+<body>
+    <!-- Efectos decorativos de fondo (brumas y luces de ambiente romántico) -->
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-glow bg-glow-3"></div>
+
+    <!-- Contenedor Principal (Simula un dispositivo iPhone/Android centrado en pantallas de PC) -->
+    <main class="app-container" id="app-container">
+        
+        <!-- VISTA PRINCIPAL: MENÚ DE TARJETAS -->
+        <section id="main-view" class="view active">
+            <!-- Encabezado Principal -->
+            <header class="app-header">
+                <div class="header-heart-badge" id="header-heart-trigger">
+                    <svg viewBox="0 0 24 24" class="pulse-heart" aria-label="Corazón palpitante">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                </div>
+                <h1 class="app-title">7 días contigo</h1>
+                <p class="app-subtitle">Para mi hermosa Valeria ❤️</p>
+            </header>
+
+            <!-- Cuadrícula de Tarjetas de los Días -->
+            <div class="days-grid" id="days-grid">
+                <!-- Las tarjetas se generan o controlan desde app.js para gestionar el desbloqueo -->
+                
+                <!-- Tarjeta Día 1 -->
+                <button class="day-card" data-day="1" id="card-day-1" aria-label="Abrir Día 1">
+                    <span class="day-number">1</span>
+                    <span class="day-label">Día</span>
+                    <div class="lock-indicator">
+                        <svg viewBox="0 0 24 24" class="icon-lock">
+                            <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                        </svg>
+                    </div>
+                </button>
+
+                <!-- Tarjeta Día 2 -->
+                <button class="day-card" data-day="2" id="card-day-2" aria-label="Abrir Día 2">
+                    <span class="day-number">2</span>
+                    <span class="day-label">Día</span>
+                    <div class="lock-indicator">
+                        <svg viewBox="0 0 24 24" class="icon-lock">
+                            <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                        </svg>
+                    </div>
+                </button>
+
+                <!-- Tarjeta Día 3 -->
+                <button class="day-card" data-day="3" id="card-day-3" aria-label="Abrir Día 3">
+                    <span class="day-number">3</span>
+                    <span class="day-label">Día</span>
+                    <div class="lock-indicator">
+                        <svg viewBox="0 0 24 24" class="icon-lock">
+                            <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                        </svg>
+                    </div>
+                </button>
+
+                <!-- Tarjeta Día 4 -->
+                <button class="day-card" data-day="4" id="card-day-4" aria-label="Abrir Día 4">
+                    <span class="day-number">4</span>
+                    <span class="day-label">Día</span>
+                    <div class="lock-indicator">
+                        <svg viewBox="0 0 24 24" class="icon-lock">
+                            <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                        </svg>
+                    </div>
+                </button>
+
+                <!-- Tarjeta Día 5 -->
+                <button class="day-card" data-day="5" id="card-day-5" aria-label="Abrir Día 5">
+                    <span class="day-number">5</span>
+                    <span class="day-label">Día</span>
+                    <div class="lock-indicator">
+                        <svg viewBox="0 0 24 24" class="icon-lock">
+                            <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                        </svg>
+                    </div>
+                </button>
+
+                <!-- Tarjeta Día 6 -->
+                <button class="day-card" data-day="6" id="card-day-6" aria-label="Abrir Día 6">
+                    <span class="day-number">6</span>
+                    <span class="day-label">Día</span>
+                    <div class="lock-indicator">
+                        <svg viewBox="0 0 24 24" class="icon-lock">
+                            <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                        </svg>
+                    </div>
+                </button>
+
+                <!-- Tarjeta Día 7 (Diseño destacado de cierre) -->
+                <button class="day-card day-card-featured" data-day="7" id="card-day-7" aria-label="Abrir Día Final">
+                    <div class="featured-content">
+                        <span class="day-number">7</span>
+                        <span class="day-label">Día Final</span>
+                    </div>
+                    <div class="lock-indicator">
+                        <svg viewBox="0 0 24 24" class="icon-lock">
+                            <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+
+            <!-- Pie de página romántico -->
+            <footer class="main-footer">
+                <span>Hecho con ❤️ para ti</span>
+            </footer>
+        </section>
+
+        <!-- SECCIONES PARA CADA DÍA (SISTEMA SPA) -->
+        
+        <!-- Día 1 -->
+        <section id="day-1" class="view day-view" aria-labelledby="title-day-1">
+            <header class="day-header">
+                <button class="btn-back" data-target="main-view" aria-label="Volver al menú">
+                    <svg viewBox="0 0 24 24" class="icon-chevron">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                    </svg>
+                    <span>Volver</span>
+                </button>
+                <div class="day-header-number">Día 1</div>
+            </header>
+            <div class="day-content">
+                <div class="glass-card">
+                    <div class="decorative-heart">❤️</div>
+                    <h2 class="day-content-title" id="title-day-1">Día 1</h2>
+                    
+                    <!-- Contenedor preparado para contenido futuro -->
+                    <div class="custom-content">
+                        <p class="quiz-intro">Responde bien las preguntas 💕</p>
+
+                        <div class="quiz-question" data-question="1">
+                            <p class="quiz-pregunta">1. ¿Qué día empezamos a hablar por Instagram?</p>
+                            <div class="quiz-opciones">
+                                <button class="quiz-option" data-value="a">A) 15 de junio</button>
+                                <button class="quiz-option" data-value="b">B) 22 de mayo</button>
+                                <button class="quiz-option" data-value="c">C) 3 de abril</button>
+                            </div>
+                        </div>
+
+                        <div class="quiz-question" data-question="2">
+                            <p class="quiz-pregunta">2. ¿Cómo se llama mi prima pequeña?</p>
+                            <div class="quiz-opciones">
+                                <button class="quiz-option" data-value="a">A) María</button>
+                                <button class="quiz-option" data-value="b">B) Laura</button>
+                                <button class="quiz-option" data-value="c">C) Sofía</button>
+                            </div>
+                        </div>
+
+                        <div class="quiz-question" data-question="3">
+                            <p class="quiz-pregunta">3. ¿Cuál es mi comida favorita?</p>
+                            <div class="quiz-opciones">
+                                <button class="quiz-option" data-value="a">A) Paella</button>
+                                <button class="quiz-option" data-value="b">B) Cocido</button>
+                                <button class="quiz-option" data-value="c">C) Pizza</button>
+                            </div>
+                        </div>
+
+                        <div class="quiz-mensaje" id="quiz-mensaje"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Día 2 -->
+        <section id="day-2" class="view day-view" aria-labelledby="title-day-2">
+            <header class="day-header">
+                <button class="btn-back" data-target="main-view" aria-label="Volver al menú">
+                    <svg viewBox="0 0 24 24" class="icon-chevron">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                    </svg>
+                    <span>Volver</span>
+                </button>
+                <div class="day-header-number">Día 2</div>
+            </header>
+            <div class="day-content">
+                <div class="glass-card">
+                    <div class="decorative-heart">💖</div>
+                    <h2 class="day-content-title" id="title-day-2">Día 2</h2>
+                    <div class="custom-content">
+                        <p class="game-intro">Atrapa 20 corazones 💕</p>
+                        <div class="catch-game" id="catch-game">
+                            <div class="game-stats">
+                                <span class="game-label">Puntos:</span>
+                                <span class="game-score" id="game-score">0</span>
+                                <span class="game-label">Meta: 20</span>
+                            </div>
+                            <div class="game-area" id="game-area"></div>
+                            <button class="game-start-btn" id="game-start-btn">¡Empezar! 💕</button>
+                            <div class="game-result" id="game-result"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Día 3 -->
+        <section id="day-3" class="view day-view" aria-labelledby="title-day-3">
+            <header class="day-header">
+                <button class="btn-back" data-target="main-view" aria-label="Volver al menú">
+                    <svg viewBox="0 0 24 24" class="icon-chevron">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                    </svg>
+                    <span>Volver</span>
+                </button>
+                <div class="day-header-number">Día 3</div>
+            </header>
+            <div class="day-content">
+                <div class="glass-card">
+                    <div class="decorative-heart">💝</div>
+                    <h2 class="day-content-title" id="title-day-3">Día 3</h2>
+                    <div class="custom-content">
+                        <p class="codigo-intro">🔐 Código Secreto</p>
+                        <p class="codigo-hint">La primera letra de cada emoji forma una frase...</p>
+                        <div class="codigo-emojis">
+                            <div class="codigo-grupo">
+                                <span class="codigo-emoji">🐯</span>
+                                <span class="codigo-emoji">🌟</span>
+                            </div>
+                            <div class="codigo-grupo">
+                                <span class="codigo-emoji">🦅</span>
+                                <span class="codigo-emoji">🐵</span>
+                                <span class="codigo-emoji">🐻</span>
+                            </div>
+                            <div class="codigo-grupo">
+                                <span class="codigo-emoji">🐵</span>
+                                <span class="codigo-emoji">🦄</span>
+                                <span class="codigo-emoji">🐪</span>
+                                <span class="codigo-emoji">🦛</span>
+                                <span class="codigo-emoji">🐻</span>
+                            </div>
+                            <div class="codigo-grupo">
+                                <span class="codigo-emoji">🐵</span>
+                                <span class="codigo-emoji">🦎</span>
+                            </div>
+                            <div class="codigo-grupo">
+                                <span class="codigo-emoji">🐄</span>
+                                <span class="codigo-emoji">🦎</span>
+                                <span class="codigo-emoji">🐉</span>
+                                <span class="codigo-emoji">🦅</span>
+                            </div>
+                        </div>
+                        <div class="codigo-input-wrapper">
+                            <input type="text" class="codigo-input" id="codigo-input" placeholder="Escribe la frase secreta..." autocomplete="off">
+                            <button class="codigo-btn" id="codigo-btn">Descifrar 🔓</button>
+                        </div>
+                        <button class="codigo-pista" id="codigo-pista">💡 Pista</button>
+                        <div class="codigo-feedback" id="codigo-feedback"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Día 4 -->
+        <section id="day-4" class="view day-view" aria-labelledby="title-day-4">
+            <header class="day-header">
+                <button class="btn-back" data-target="main-view" aria-label="Volver al menú">
+                    <svg viewBox="0 0 24 24" class="icon-chevron">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                    </svg>
+                    <span>Volver</span>
+                </button>
+                <div class="day-header-number">Día 4</div>
+            </header>
+            <div class="day-content">
+                <div class="glass-card">
+                    <div class="decorative-heart">💕</div>
+                    <h2 class="day-content-title" id="title-day-4">Día 4</h2>
+                    <div class="custom-content">
+                        <p class="puzzle-intro">🧩 Arma el puzzle</p>
+                        <p class="puzzle-hint">Toca una pieza y luego otra para intercambiarlas</p>
+                        <div class="puzzle-wrapper">
+                            <div class="puzzle-grid" id="puzzle-grid"></div>
+                        </div>
+                        <div class="puzzle-bar">
+                            <span class="puzzle-moves" id="puzzle-moves">Movimientos: 0</span>
+                            <button class="puzzle-reset" id="puzzle-reset">🔀 Revolver</button>
+                        </div>
+                        <div class="puzzle-complete" id="puzzle-complete">
+                            🎉 Muy bien hecho amor
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Día 5 -->
+        <section id="day-5" class="view day-view" aria-labelledby="title-day-5">
+            <header class="day-header">
+                <button class="btn-back" data-target="main-view" aria-label="Volver al menú">
+                    <svg viewBox="0 0 24 24" class="icon-chevron">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                    </svg>
+                    <span>Volver</span>
+                </button>
+                <div class="day-header-number">Día 5</div>
+            </header>
+            <div class="day-content">
+                <div class="glass-card">
+                    <div class="decorative-heart">💞</div>
+                    <h2 class="day-content-title" id="title-day-5">Día 5</h2>
+                    <div class="custom-content">
+                        <p class="acertijo-titulo">🌉 El puente invisible</p>
+                        <div class="acertijo-texto">
+                            <p>Hay un puente entre dos personas que no se puede ver ni tocar.</p>
+                            <p>Cuanto más se cruza, más fuerte se vuelve.</p>
+                            <p>Si uno deja de usarlo, empieza a romperse poco a poco.</p>
+                            <p>No importa la distancia, los kilómetros o el tiempo: si el puente sigue vivo, las dos personas permanecen unidas.</p>
+                            <p>Nosotros lo cruzamos todos los días, incluso cuando estamos enfadados.</p>
+                            <p class="acertijo-pregunta">¿Qué es?</p>
+                        </div>
+                        <div class="acertijo-pistas" id="acertijo-pistas">
+                            <button class="acertijo-pista-btn" data-pista="1">🔍 Pista 1</button>
+                            <button class="acertijo-pista-btn" data-pista="2">🔍 Pista 2</button>
+                            <button class="acertijo-pista-btn" data-pista="3">🔍 Pista 3</button>
+                        </div>
+                        <div class="acertijo-pista-texto" id="acertijo-pista-texto"></div>
+                        <div class="acertijo-input-wrapper">
+                            <input type="text" class="acertijo-input" id="acertijo-input" placeholder="Escribe la respuesta..." autocomplete="off">
+                            <button class="acertijo-btn" id="acertijo-btn">Responder</button>
+                        </div>
+                        <div class="acertijo-feedback" id="acertijo-feedback"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Día 6 -->
+        <section id="day-6" class="view day-view" aria-labelledby="title-day-6">
+            <header class="day-header">
+                <button class="btn-back" data-target="main-view" aria-label="Volver al menú">
+                    <svg viewBox="0 0 24 24" class="icon-chevron">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                    </svg>
+                    <span>Volver</span>
+                </button>
+                <div class="day-header-number">Día 6</div>
+            </header>
+            <div class="day-content">
+                <div class="glass-card">
+                    <div class="decorative-heart">💘</div>
+                    <h2 class="day-content-title" id="title-day-6">Día 6</h2>
+                    <div class="custom-content">
+                        <p class="vf-intro">Verdadero o Falso 💭</p>
+                        <p class="vf-sub">Selecciona V o F en cada afirmación</p>
+                        <div class="vf-lista" id="vf-lista"></div>
+                        <div class="vf-resultado" id="vf-resultado"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Día 7 -->
+        <section id="day-7" class="view day-view" aria-labelledby="title-day-7">
+            <header class="day-header">
+                <button class="btn-back" data-target="main-view" aria-label="Volver al menú">
+                    <svg viewBox="0 0 24 24" class="icon-chevron">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                    </svg>
+                    <span>Volver</span>
+                </button>
+                <div class="day-header-number">Día 7</div>
+            </header>
+            <div class="day-content">
+                <div class="glass-card">
+                    <div class="decorative-heart animate-spin-slow">🌸</div>
+                    <h2 class="day-content-title" id="title-day-7">Día Final</h2>
+                    <div class="custom-content">
+                        <p class="maze-intro">🏰 El Laberinto</p>
+                        <p class="maze-sub">Encuentra la salida correcta — solo una de las tres es la buena</p>
+                        <div class="maze-wrapper">
+                            <div class="maze-grid" id="maze-grid"></div>
+                            <div class="maze-controls">
+                                <div class="maze-row">
+                                    <button class="maze-btn" id="maze-up">↑</button>
+                                </div>
+                                <div class="maze-row">
+                                    <button class="maze-btn" id="maze-left">←</button>
+                                    <button class="maze-btn" id="maze-down">↓</button>
+                                    <button class="maze-btn" id="maze-right">→</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="maze-resultado" id="maze-resultado"></div>
+                        <button class="maze-reintentar" id="maze-reintentar">🔄 Volver a empezar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cartas de cada día -->
+        <section id="carta-1" class="view day-view" aria-labelledby="title-carta-1">
+            <header class="day-header">
+                <button class="btn-back" data-target="main-view" aria-label="Volver al menú">
+                    <svg viewBox="0 0 24 24" class="icon-chevron"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                    <span>Volver</span>
+                </button>
+                <div class="day-header-number">Carta</div>
+            </header>
+            <div class="day-content">
+                <div class="glass-card">
+                    <div class="decorative-heart">💌</div>
+                    <h2 class="day-content-title" id="title-carta-1">El Comienzo</h2>
+                    <div class="custom-content carta-contenido"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="carta-2" class="view day-view" aria-labelledby="title-carta-2">
+            <header class="day-header">
+                <button class="btn-back" data-target="main-view" aria-label="Volver al menú">
+                    <svg viewBox="0 0 24 24" class="icon-chevron"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                    <span>Volver</span>
+                </button>
+                <div class="day-header-number">Carta</div>
+            </header>
+            <div class="day-content">
+                <div class="glass-card">
+                    <div class="decorative-heart">💌</div>
+                    <h2 class="day-content-title" id="title-carta-2">Día 2</h2>
+                    <div class="custom-content carta-contenido"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="carta-3" class="view day-view" aria-labelledby="title-carta-3">
+            <header class="day-header">
+                <button class="btn-back" data-target="main-view" aria-label="Volver al menú">
+                    <svg viewBox="0 0 24 24" class="icon-chevron"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                    <span>Volver</span>
+                </button>
+                <div class="day-header-number">Carta</div>
+            </header>
+            <div class="day-content">
+                <div class="glass-card">
+                    <div class="decorative-heart">💌</div>
+                    <h2 class="day-content-title" id="title-carta-3">Día 3</h2>
+                    <div class="custom-content carta-contenido"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="carta-4" class="view day-view" aria-labelledby="title-carta-4">
+            <header class="day-header">
+                <button class="btn-back" data-target="main-view" aria-label="Volver al menú">
+                    <svg viewBox="0 0 24 24" class="icon-chevron"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                    <span>Volver</span>
+                </button>
+                <div class="day-header-number">Carta</div>
+            </header>
+            <div class="day-content">
+                <div class="glass-card">
+                    <div class="decorative-heart">💌</div>
+                    <h2 class="day-content-title" id="title-carta-4">Día 4</h2>
+                    <div class="custom-content carta-contenido"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="carta-5" class="view day-view" aria-labelledby="title-carta-5">
+            <header class="day-header">
+                <button class="btn-back" data-target="main-view" aria-label="Volver al menú">
+                    <svg viewBox="0 0 24 24" class="icon-chevron"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                    <span>Volver</span>
+                </button>
+                <div class="day-header-number">Carta</div>
+            </header>
+            <div class="day-content">
+                <div class="glass-card">
+                    <div class="decorative-heart">💌</div>
+                    <h2 class="day-content-title" id="title-carta-5">Día 5</h2>
+                    <div class="custom-content carta-contenido"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="carta-6" class="view day-view" aria-labelledby="title-carta-6">
+            <header class="day-header">
+                <button class="btn-back" data-target="main-view" aria-label="Volver al menú">
+                    <svg viewBox="0 0 24 24" class="icon-chevron"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                    <span>Volver</span>
+                </button>
+                <div class="day-header-number">Carta</div>
+            </header>
+            <div class="day-content">
+                <div class="glass-card">
+                    <div class="decorative-heart">💌</div>
+                    <h2 class="day-content-title" id="title-carta-6">Día 6</h2>
+                    <div class="custom-content carta-contenido"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="carta-7" class="view day-view" aria-labelledby="title-carta-7">
+            <header class="day-header">
+                <button class="btn-back" data-target="main-view" aria-label="Volver al menú">
+                    <svg viewBox="0 0 24 24" class="icon-chevron"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                    <span>Volver</span>
+                </button>
+                <div class="day-header-number">Carta</div>
+            </header>
+            <div class="day-content">
+                <div class="glass-card">
+                    <div class="decorative-heart">💌</div>
+                    <h2 class="day-content-title" id="title-carta-7">Día 7</h2>
+                    <div class="custom-content carta-contenido"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal de Contraseña para desbloquear días -->
+    <div class="password-overlay" id="password-overlay">
+        <div class="password-modal" id="password-modal">
+            <button class="password-close" id="password-close" aria-label="Cerrar">✕</button>
+            <div class="password-heart-icon">🔐</div>
+            <h3 class="password-title">Día <span id="password-day-number">1</span></h3>
+            <p class="password-subtitle">Escribe la contraseña secreta para desbloquear este día</p>
+            <div class="password-input-wrapper">
+                <input type="password" class="password-input" id="password-input" placeholder="Contraseña..." autocomplete="off" />
+                <button class="password-toggle" id="password-toggle" aria-label="Mostrar contraseña">
+                    <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" fill="currentColor"/></svg>
+                </button>
+            </div>
+            <p class="password-error" id="password-error">Contraseña incorrecta 💔</p>
+            <button class="password-submit" id="password-submit">Desbloquear ❤️</button>
+        </div>
+    </div>
+
+    <!-- Partículas globales flotando en el fondo del body -->
+    <div class="floating-hearts-container" id="floating-hearts-container"></div>
+
+    <!-- Scripts de la Aplicación -->
+    <script src="amor.js"></script>
+</body>
+</html>
