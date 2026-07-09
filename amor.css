@@ -1315,28 +1315,14 @@ audio {
     transform: scale(0.97);
 }
 
-.codigo-pista {
-    background: none;
-    border: 1px solid rgba(255, 75, 107, 0.2);
-    border-radius: 12px;
-    padding: 8px 18px;
-    font-family: var(--font-sans);
-    font-size: 13px;
-    color: var(--text-muted);
-    cursor: pointer;
-    transition: var(--transition-smooth);
-    margin-bottom: 8px;
-}
-
-.codigo-pista:hover {
-    border-color: var(--primary-color);
+.codigo-letra {
+    font-size: 10px;
+    font-weight: 700;
     color: var(--primary-color);
-    background: rgba(255, 75, 107, 0.04);
-}
+    font-family: var(--font-sans);
+    letter-spacing: 0;
+    animation: letraIn 0.3s ease;
 
-.codigo-pista:disabled {
-    opacity: 0.4;
-    cursor: default;
 }
 
 .codigo-feedback {

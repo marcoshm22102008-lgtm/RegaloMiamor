@@ -613,7 +613,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (codigoInput) {
         const codigoBtn = document.getElementById('codigo-btn');
         const codigoFeedback = document.getElementById('codigo-feedback');
-        const codigoPista = document.getElementById('codigo-pista');
         const respuestaCorrecta = 'te amo mucho mi vida';
 
         function normalizar(str) {
@@ -647,26 +646,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.key === 'Enter') verificarCodigo();
         });
 
-        let pistaUsada = false;
-        codigoPista.addEventListener('click', () => {
-            if (pistaUsada) return;
-            pistaUsada = true;
-
-            const letras = ['T', 'E', 'A', 'M', 'O', 'M', 'U', 'C', 'H', 'O', 'M', 'I', 'V', 'I', 'D', 'A'];
-            const emojis = document.querySelectorAll('.codigo-emoji');
-
-            emojis.forEach((el, i) => {
-                if (i < letras.length) {
-                    const span = document.createElement('span');
-                    span.className = 'codigo-letra';
-                    span.textContent = letras[i];
-                    el.appendChild(span);
-                }
-            });
-
-            codigoPista.textContent = '✅ Letras reveladas';
-            codigoPista.disabled = true;
-        });
     }
 
     // ---------------------------------------------------------
