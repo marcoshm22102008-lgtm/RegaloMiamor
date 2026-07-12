@@ -1372,16 +1372,16 @@ audio {
 
 .puzzle-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
     width: 100%;
     background: rgba(255, 75, 107, 0.08);
-    padding: 3px;
+    padding: 2px;
 }
 
 .puzzle-piece {
-    min-height: 30px;
-    background-size: 300% 300%;
+    min-height: 24px;
+    background-size: 400% 400%;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease, outline 0.2s ease;
     position: relative;

@@ -653,7 +653,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ---------------------------------------------------------
     const puzzleGrid = document.getElementById('puzzle-grid');
     if (puzzleGrid) {
-        const PUZZLE_SIZE = 3;
+        const PUZZLE_SIZE = 4;
         const TOTAL = PUZZLE_SIZE * PUZZLE_SIZE;
         const IMG = 'IMG-20260606-WA0017.jpg';
 
